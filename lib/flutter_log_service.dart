@@ -6,8 +6,8 @@ import 'package:logger/logger.dart';
 class LogService {
   static late Logger _logger;
 
-  static void init() {
-    _logger = Logger();
+  static void init({bool usePrettyPrinter = false}) {
+    _logger = Logger(printer: usePrettyPrinter ? PrettyPrinter() : null);
   }
 
   static void debug(String message) {
@@ -16,7 +16,7 @@ class LogService {
     }
   }
 
-  static void error(String message, {dynamic error, StackTrace? stackTrace}) {
+  static void error(String message, [dynamic error, StackTrace? stackTrace]) {
     if (kDebugMode) {
       _logger.e(message, error, stackTrace);
     }
