@@ -16,6 +16,12 @@ class LogService {
     }
   }
 
+  static void info(String message, [dynamic error, StackTrace? stackTrace]) {
+    if (kDebugMode) {
+      _logger.i(message, error, stackTrace);
+    }
+  }
+
   static void error(String message, [dynamic error, StackTrace? stackTrace]) {
     if (kDebugMode) {
       _logger.e(message, error, stackTrace);
