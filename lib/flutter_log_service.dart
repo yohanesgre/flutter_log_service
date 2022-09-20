@@ -22,7 +22,7 @@ class LogService {
     }
   }
 
-  static void error(String message, [dynamic error, StackTrace? stackTrace]) {
+  static void error(dynamic message, [dynamic error, StackTrace? stackTrace]) {
     if (kDebugMode) {
       _logger.e(message, error, stackTrace);
     }
