@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   logger: ^1.1.0
+  sentry_flutter: ^6.13.1
 
 dev_dependencies:
   flutter_test:
